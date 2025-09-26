@@ -6,7 +6,7 @@ The **IQ Banking Intelligence Agent** is live at [https://bankersiq.com/agent/lt
 
 This is an **AI agent** for banking intelligence, not a traditional API. It provides financial product lifetime value calculations with agent-like reasoning and transparency.
 
-## 🧠 Agent vs API
+## 🧠 Agentic Features
 
 **This is an AI Agent because it:**
 - Provides reasoning and explanations for calculations
@@ -36,7 +36,7 @@ curl -X POST https://bankersiq.com/agent/ltv/ \
 | **Checking** | 10 years | 0% | $12/month fees, 3% funding credit |
 | **Savings** | 10 years | 0% | No fees, 3% funding credit |
 | **CD** | 5 years | 2.5% | 0.5% early withdrawal penalty |
-| **Loans** | 5 years | 6% | Commercial loans, 3% COF |
+| **Loans** | 5 years | Wallstreet Journal Prime Rate | Commercial loans, 3% COF |
 
 ## 💡 Agent Intelligence Features
 
@@ -244,4 +244,4 @@ echo "NPV: " . $response['results']['npv'] . "\n";
 - **Production Ready:** Deployed on reliable hosting
 - **Agent Intelligence:** Transparent reasoning and explanations
 
-This agent provides banking intelligence with the reasoning and transparency that makes it truly agentic, not just another API. Access it at [https://bankersiq.com/agent/ltv/](https://bankersiq.com/agent/ltv/) for all your financial product lifetime value calculations.
+This agent provides banking intelligence with the reasoning and transparency. Access it at [https://bankersiq.com/agent/ltv/](https://bankersiq.com/agent/ltv/) for all your financial product lifetime value calculations.

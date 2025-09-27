@@ -8,7 +8,7 @@ This is an **AI agent** for banking intelligence, not a traditional API. It prov
 
 ## 🧠 Agentic Features
 
-**This is an AI Agent because it:**
+**Starting with:**
 - Provides reasoning and explanations for calculations
 - Shows step-by-step financial logic
 - Adapts to different financial product types

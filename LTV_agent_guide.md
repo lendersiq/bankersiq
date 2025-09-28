@@ -68,7 +68,7 @@ curl -X POST https://bankersiq.com/agent/ltv/ \
     "monthlyFundingCredit": 25,
     "fundingCreditRate": 3.0,
     "fundingCreditAnnual": 300,
-    "npv": 1379.02
+    "lifetimeValue": 1379.02
   },
   "explanation": "Checking account lifetime value: 0% rate, $12 monthly fees, 10-year analysis (includes funding credit)"
 }
@@ -90,7 +90,7 @@ curl -X POST https://bankersiq.com/agent/ltv/ \
     "totalFundingCredit": 13259.8,
     "fundingCreditRate": 3.0,
     "fundingCreditAnnual": 1500,
-    "npv": 24309.63
+    "lifetimeValue": 24309.63
   },
   "explanation": "Savings account lifetime value: 0% compound rate, 10-year analysis (includes funding credit)"
 }
@@ -113,7 +113,7 @@ curl -X POST https://bankersiq.com/agent/ltv/ \
     "totalInterest": 3285.21,
     "fundingCreditRate": 3.0,
     "fundingCreditAnnual": 750,
-    "npv": 3484.37
+    "lifetimeValue": 3484.37
   },
   "explanation": "CD lifetime value: 2.5% rate, 5-year term, 0.5% early withdrawal penalty (includes funding credit)"
 }
@@ -134,7 +134,9 @@ curl -X POST https://bankersiq.com/agent/ltv/ \
   "results": {
     "monthlyPayment": 6443.01,
     "balloonPayment": 899320.87,
-    "npv": 22398.82
+    "totalPayments": "$433,684.12",
+    "averageLife": 5,
+    "lifetimeValue": 22398.82
   },
   "explanation": "Commercial loan lifetime value calculation: 5-year term, 25-year amortization, 6% rate, 3% COF, 2.5% discount rate"
 }
@@ -143,15 +145,15 @@ curl -X POST https://bankersiq.com/agent/ltv/ \
 ## 🧮 Agent Calculation Logic
 
 ### Deposit Products (Checking, Savings, CD)
-- **Funding Credit:** 3% annual (bank earns this)
-- **Interest Paid:** Expense to bank (reduces NPV)
-- **Fees:** Revenue to bank (increases NPV)
-- **NPV Formula:** PV(Funding Credit) - PV(Interest) - PV(Fees) + Initial Balance
+- **Funding Credit:** 3% annual (bank can lend these dollars, so this credit should be applied)
+- **Interest Paid:** Expense to bank (reduces lifetime value)
+- **Fees:** Revenue to bank (increases lifetime value)
+- **Lifetime Value Formula:** PV(Funding Credit) - PV(Interest) - PV(Fees) + Initial Balance
 
 ### Loan Products
-- **Interest Earned:** Revenue to bank (increases NPV)
-- **Cost of Funds:** 3% annual expense (reduces NPV)
-- **NPV Formula:** PV(Payments) + PV(Balloon) - Principal - PV(Costs)
+- **Interest Earned:** Revenue to bank (increases lifetime value)
+- **Cost of Funds:** 3% annual expense (reduces lifetime value)
+- **Lifetime Value Formula:** PV(Payments) + PV(Balloon) - Principal - PV(Costs)
 
 ## 🔍 Agent Validation
 
@@ -188,7 +190,7 @@ const response = await fetch('https://bankersiq.com/agent/ltv/', {
 
 const result = await response.json();
 console.log(result.explanation);
-console.log('NPV:', result.results.npv);
+console.log('lifetime Value:', result.results.lifetimeValue);
 ```
 
 ### Python
@@ -206,7 +208,7 @@ response = requests.post('https://bankersiq.com/agent/ltv/',
 
 result = response.json()
 print(result['explanation'])
-print(f"NPV: {result['results']['npv']}")
+print(f"Lifetime Value: {result['results']['lifetimeValue']}")
 ```
 
 ### PHP
@@ -229,7 +231,7 @@ $result = file_get_contents('https://bankersiq.com/agent/ltv/', false, $context)
 $response = json_decode($result, true);
 
 echo $response['explanation'] . "\n";
-echo "NPV: " . $response['results']['npv'] . "\n";
+echo "Lifetime Value: " . $response['results']['lifetimeValue'] . "\n";
 ```
 
 ## 🎯 Agent Endpoints

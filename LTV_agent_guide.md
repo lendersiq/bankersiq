@@ -4,7 +4,7 @@
 
 The **IQ Banking Intelligence Agent** is live at [https://bankersiq.com/agent/ltv/](https://bankersiq.com/agent/ltv/)
 
-This is an **AI agent** for banking intelligence, not a traditional API. It provides financial product lifetime value calculations with agent-like reasoning and transparency.
+This is an **AI agent** for banking intelligence, not a traditional API. It provides financial product lifetime value calculations with AI reasoning and transparency.
 
 ## 🧠 Agentic Features
 

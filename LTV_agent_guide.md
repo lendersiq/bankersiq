@@ -134,7 +134,6 @@ curl -X POST https://bankersiq.com/agent/ltv/   -H "Content-Type: application/js
 | transactionFees | monthly savings transaction fee revenue |
 | operatingCost | annual operating costs |
 | discountRate | discount rate for present value calculation |
-| compoundInterest | compound the interest monthly (true or false) | 
 
 ---
 

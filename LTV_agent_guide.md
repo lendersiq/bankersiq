@@ -83,6 +83,21 @@ curl -X POST https://bankersiq.com/agent/ltv/   -H "Content-Type: application/js
 ```bash
 curl -X POST https://bankersiq.com/agent/ltv/   -H "Content-Type: application/json"   -H "X-API-Key: AgentIsFreeForNow"   -d '{"value": 10000, "type": "checking"}'
 ```
+---
+
+## 📊 Checking Supported Arguments
+| Argument ID | Description |
+|-------------|-----------|
+| rate | annual interest rate |
+| fundingRate | credit for funding (annual rate) |
+| life | expected life in years |
+| monthlyFees | monthly service fee revenue |
+| transactionFees | monthly checking transaction fee revenue |
+| operatingCost | annual operating costs |
+| discountRate | discount rate for present value calculation |
+| compoundInterest | compound the interest monthly (true or false) | 
+
+---
 
 **Expected Response:**
 ```json
@@ -107,6 +122,22 @@ curl -X POST https://bankersiq.com/agent/ltv/   -H "Content-Type: application/js
 curl -X POST https://bankersiq.com/agent/ltv/   -H "Content-Type: application/json"   -H "X-API-Key: AgentIsFreeForNow"   -d '{"value": 50000, "type": "savings"}'
 ```
 
+---
+
+## 📊 Savings Supported Arguments
+| Argument ID | Description |
+|-------------|-----------|
+| rate | annual interest rate |
+| fundingRate | credit for funding (annual rate) |
+| life | expected life in years |
+| monthlyFees | monthly service fee revenue |
+| transactionFees | monthly savings transaction fee revenue |
+| operatingCost | annual operating costs |
+| discountRate | discount rate for present value calculation |
+| compoundInterest | compound the interest monthly (true or false) | 
+
+---
+
 **Expected Response:**
 ```json
 {
@@ -129,6 +160,21 @@ curl -X POST https://bankersiq.com/agent/ltv/   -H "Content-Type: application/js
 ```bash
 curl -X POST https://bankersiq.com/agent/ltv/   -H "Content-Type: application/json"   -H "X-API-Key: AgentIsFreeForNow"   -d '{"value": 25000, "type": "cd"}'
 ```
+
+---
+
+## 📊 CD Supported Arguments
+| Argument ID | Description |
+|-------------|-----------|
+| rate | annual interest rate |
+| fundingRate | credit for funding (annual rate) |
+| life | expected life in years |
+| monthlyFees | monthly service fee revenue (rare - default is $0) |
+| operatingCost | annual operating costs |
+| discountRate | discount rate for present value calculation |
+| compoundInterest | compound the interest monthly (true or false) | 
+
+---
 
 **Expected Response:**
 ```json
@@ -153,6 +199,26 @@ curl -X POST https://bankersiq.com/agent/ltv/   -H "Content-Type: application/js
 ```bash
 curl -X POST https://bankersiq.com/agent/ltv/   -H "Content-Type: application/json"   -H "X-API-Key: AgentIsFreeForNow"   -d '{"value": 1000000, "type": "loans"}'
 ```
+
+---
+
+## 📊 Loan Supported Arguments
+| Argument ID | Description |
+|-------------|-----------|
+| loanType | specify type of loan (consumer or commercial) |
+| rate | annual interest rate |
+| costOfFunds | cost of funds rate (annual rate) |
+| life | expected life in years |
+| Amortization | Amortization period in years |
+| monthlyFees | monthly fee revenue (rare) |
+| operatingCost | annual operating costs |
+| upfrontCosts | other upfront costs |
+| upfrontFeeIncome | upfront fee income |
+| discountRate | discount rate for present value calculation |
+| compoundInterest | compound the interest monthly (true or false) | 
+
+---
+
 
 **Expected Response:**
 ```json

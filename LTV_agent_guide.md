@@ -13,10 +13,6 @@ This is an **AI agent** for banking intelligence, not a traditional API. It prov
 **POST requests require an API key.**  
 **GET requests (status check) do not.**
 
-### Setting Your Key
-
-In `config.php` (already included at top of the agent code):
-
 ### Using the Key
 
 When making a request:
